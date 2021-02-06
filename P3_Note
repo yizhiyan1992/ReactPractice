@@ -1,0 +1,21 @@
+1. there are two ways to create virtual DOM elements:
+	1) in javascript:
+		React.createElement('tagName',{id:idName,className:classNme,...},'content');
+
+	2) in babel:
+		var newEle=<h3>I am a birds</h3>  // no quote here, the syntax is different to js.
+
+2. ReactDOM.render(newEle,fatherEle);
+	append the created virtual DOM element to a node.
+
+3. In babel, how to refer a variable? 
+	use {}
+	e.g. var idName="lalala"
+		 id={idName}
+
+
+4. JSX: Javascript XML
+
+5. The different between var, let, const:
+	1) let and const are used for defining the variables in block scope
+	2) variables defined by const cannot be changed.

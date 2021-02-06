@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="node_modules/react/umd/react.development.js"></script>
+	<script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+	<script src="node_modules/babel-standalone/babel.min.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="target"></div>
+	<!--
+		use javascript to form a list
+	<script type="text/javascript">
+
+		function addLi(element,index){
+			var newEle=document.createElement('li');
+			newEle.innerHTML=element;
+			console.log(newEle+" "+index);
+			return newEle
+		}
+
+		var arr=['apple','cake','juice','dope'];
+		arr=arr.map(addLi);
+		//console.log(arr);
+		var newEle=document.createElement('ul');
+		for (var i=0;i<arr.length;i++) {
+			newEle.appendChild(arr[i]);
+		}
+		var obj=document.getElementById("target");
+		console.log(obj);
+		obj.appendChild(newEle);
+	</script>
+	-->
+
+	<script type="text/babel">
+		const names=["apple","lana","banana","juju"];
+		const newNames=names.map(function(ele,index){return <li key={index}>{ele}</li>})
+		const lis=<h2>{newNames}</h2>;
+
+		ReactDOM.render(lis,document.getElementById("target"));
+
+	</script>
+</body>
+</html>

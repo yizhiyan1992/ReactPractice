@@ -1,0 +1,5 @@
+1. How to use map function for array
+array.map(function)
+function receive three params: 1.element, 2.index, 3.array it self;
+
+2. warining: each child in the list should have a unique "key" in React.

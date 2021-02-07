@@ -3,3 +3,16 @@ array.map(function)
 function receive three params: 1.element, 2.index, 3.array it self;
 
 2. warining: each child in the list should have a unique "key" in React.
+
+3. What is the concept of module and compoenent in web?
+	-module: provide a function
+	-component: provide one area in the webpage
+
+
+	|-----------|
+	| web page  |	js module1
+	|  |compon| |
+	|  |______| |	js module2
+	|           |
+	|           |	css
+	|___________|	html ...

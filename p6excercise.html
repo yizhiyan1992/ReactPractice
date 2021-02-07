@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript" src="node_modules/react/umd/react.development.js"></script>
+	<script type="text/javascript" src="node_modules/react-dom/umd/react-dom.development.js"></script>
+	<script type="text/javascript" src="node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+	<div id="place1"></div>
+	<div id="place2"></div>
+
+	<script type="text/babel">
+		// using function to create a component element
+		function MyComponent(prop) {
+			const style={color:prop.color};
+			return <h1 style={style}>{prop.content}</h1>;
+		}
+
+		ReactDOM.render(<MyComponent content="Hello, i am trying to test the function!" color='red'/>,
+			document.getElementById("place1"));
+
+		// using class to create a compoenent element
+		class Component2 extends React.Component {
+			constructor(prop) {
+				super(prop);
+			}
+
+			render() {
+				const style={color:'pink'};
+				return <h2 style={style}>Hello, i am trying to test the class!</h2>;
+			}
+		}
+
+		ReactDOM.render(<Component2  fontsize='36px' color2='orange'/>,document.getElementById("place2"))
+	</script>
+</body>
+
+</html>

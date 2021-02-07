@@ -1,0 +1,8 @@
+P6
+1.
+React coding style:
+OOP--->module--->component
+
+2. in JSX, there are two types of elements:
+	1) componenet element (defined by ourself, and genenrally capitalize the first char)
+	2) HTML element

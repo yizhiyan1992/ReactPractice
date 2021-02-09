@@ -1,0 +1,30 @@
+1. create a component using class
+
+	1) define a class
+		class TagName extends React.Component {
+		..........
+		}
+
+	2) build the constructor
+		constructor(props) {
+			super(props);
+			this.state=obj; // the state is an object
+
+			use bind method to pass this. to self-define methods
+		}
+
+	3) render(){
+		....
+		return a component element
+		}
+
+	4) self-defined methods
+
+
+
+2. state property:
+	
+	1) state is an object
+	2) we intiialize the state in constructor
+	3) use this.setState(newState) method to change the state (pass the new object as the parameter)
+	4) get the properties in the state: this.state.propName

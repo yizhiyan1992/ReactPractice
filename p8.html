@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript" src="node_modules/react/umd/react.development.js"></script>
+	<script type="text/javascript" src="node_modules/react-dom/umd/react-dom.development.js"></script>
+	<script type="text/javascript" src="node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+	<div id="target"></div>
+
+	<script type="text/babel">
+		class Name extends React.Component {
+
+			constructor(props) {
+			    super(props);
+				this.state={isLikeMe:false};
+				this.handleEvent=this.handleEvent.bind(this);
+			}
+
+
+			handleEvent(){
+				console.log('handlevent',this);
+				const nextState=!this.state.isLikeMe;
+				this.setState({isLikeMe:nextState});
+			}
+
+			render(){
+				const isLikeMe=this.state.isLikeMe;
+				return <h2 onClick={this.handleEvent}>{isLikeMe?"I like you":"You like me"}</h2>;
+			}
+		}
+
+		ReactDOM.render(<Name />,document.getElementById("target"));
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript" src="node_modules/react/umd/react.development.js"></script>
+	<script type="text/javascript" src="node_modules/react-dom/umd/react-dom.development.js"></script>
+	<script type="text/javascript" src="node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+	<div id="target1"></div>
+	<div id="target2"></div>
+	<div id="target3"></div>
+	<script type="text/babel">
+		const person1={
+		name:"Alexa",
+		age:25,
+		gender:"female"
+		}
+
+
+		const person2={
+		name:"Jojojo",
+		age:28,
+		gender:"male"
+		}
+
+		//create component
+		function Person(props){
+			return <ul><li>{props.name}</li><li>{props.age}</li><li>{props.gender}</li></ul>;
+		}
+
+		Person.defaultProps={age:33,gender:"male"};
+
+		class PPerson extends React.Component {
+
+			render() {
+				return <ul><li>{this.props.name}</li><li>{this.props.age}</li><li>{this.props.gender}</li></ul>;
+			}
+		}
+
+
+
+		ReactDOM.render(<Person name={person1.name} age={person1.age} gender={person1.gender}/>,document.getElementById("target1"));
+
+		//ReactDOM.render(<PPerson name={person2.name} age={person2.age} gender={person2.gender}/>,document.getElementById("target2"));
+
+		// the ... method can be used to pack/unpack the object/array
+		ReactDOM.render(<PPerson {...person2}/>,document.getElementById("target2"));
+
+		ReactDOM.render(<Person name="Susan" />,document.getElementById("target3"));
+	</script>
+</body>
+</html>
